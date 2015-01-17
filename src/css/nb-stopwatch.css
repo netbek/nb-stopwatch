@@ -1,10 +1,6 @@
 .stopwatch {
     display: block;
-	position: absolute;
-	bottom: -2em;
-	left: 0;
-	z-index: 5;
-	font-size: 0.8em;
+	font-size: 5em;
 	line-height: 1em;
 }
 
@@ -13,9 +9,8 @@
 	position: relative;
     width: 1em;
     height: 1em;
-	margin: 0.2em;
+	margin: 0;
 	padding: 0;
-	background: #EEE;
 }
 
 .stopwatch-face {
@@ -23,7 +18,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    border: 2px solid #999;
+    border: 2px solid #000;
     border-radius: 50%;
     box-sizing: border-box;
 }
@@ -36,7 +31,7 @@
     left: 50%;
     top: 25%;
 	margin-left: -1px;
-	background-color: #999;
+	background-color: #000;
     -webkit-transform-origin: 1px 100%;
 	-moz-transform-origin: 1px 100%;
 	-o-transform-origin: 1px 100%;

@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" lang="en" id="ng-app" ng-app="nb.stopwatch.demo">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>nb-stopwatch demo</title>
+		<link rel="stylesheet" href="../src/css/nb-stopwatch.css" />
+
+<!--		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>-->
+		<script src="js/angular.js"></script>
+		<script src="../dist/js/nb-stopwatch.js"></script>
+		<script src="../vendor/nb-animation-frame/vendor/animation-frame/AnimationFrame.js"></script>
+		<script src="../vendor/nb-animation-frame/dist/js/nb-animation-frame.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+	<body ng-controller="MainController">
+		<div nb-stopwatch duration="2000"></div>
+	</body>
+</html>

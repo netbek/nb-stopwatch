@@ -1,0 +1,3 @@
+[submodule "vendor/nb-animation-frame"]
+	path = vendor/nb-animation-frame
+	url = https://github.com/netbek/nb-animation-frame.git

@@ -12,6 +12,7 @@ module.exports = function (grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-html2js');
 
@@ -45,18 +46,29 @@ module.exports = function (grunt) {
 			}
 		},
 		concat: {
-			dist: {
+			distCss: {
+				src: ['src/css/**/*.css'],
+				dest: 'dist/css/<%= pkg.name %>.css'
+			},
+			distJs: {
 				src: ['src/js/**/*.js', '!src/js/<%= pkg.name %>-templates.js', 'build/js/<%= pkg.name %>-templates.js'],
 				dest: 'dist/js/<%= pkg.name %>.js'
 			}
 		},
+		cssmin: {
+			options: {
+				banner: '<%= meta.banner %>'
+			},
+			dist: {
+				files: [{
+					src: ['src/css/**/*.css'],
+					dest: 'dist/css/<%= pkg.name %>.min.css'
+				}]
+			}
+		},
 		uglify: {
 			options: {
-				banner: '<%= meta.banner %>',
-//				preserveComments: false,
-//				mangle: {
-//					except: ['angular']
-//				},
+				banner: '<%= meta.banner %>'
 			},
 			dist: {
 				src: ['dist/js/<%= pkg.name %>.js'],
@@ -69,6 +81,7 @@ module.exports = function (grunt) {
 		'clean:init',
 		'html2js',
 		'concat',
+		'cssmin',
 		'uglify',
 		'clean:exit'
 	]);

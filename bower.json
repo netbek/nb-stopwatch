@@ -1,0 +1,25 @@
+{
+	"name": "nb-stopwatch",
+	"version": "0.0.1",
+	"description": "AngularJS stopwatch directive",
+	"homepage": "https://github.com/netbek/nb-stopwatch",
+	"author": {
+		"name": "Hein Bekker",
+		"email": "hein@netbek.co.za",
+		"url": "http://netbek.co.za"
+	},
+	"license": {
+		"type": "AGPLv3",
+		"url": "http://www.gnu.org/licenses/agpl-3.0.txt"
+	},
+	"ignore": [
+		"bower_components",
+		"node_modules",
+		"test",
+		"tests",
+		"vendor"
+	],
+	"dependencies": {
+		"nb-animation-frame": "https://github.com/netbek/nb-animation-frame.git#master"
+	}
+}

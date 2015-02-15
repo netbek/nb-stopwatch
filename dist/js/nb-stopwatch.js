@@ -12,7 +12,8 @@
 	angular
 		.module('nb.stopwatch', [
 			'nb.stopwatch.templates',
-			'nb.animationFrame'
+			'nb.animationFrame',
+			'nb.lodash'
 		])
 		.provider('nbStopwatchConfig', nbStopwatchConfig)
 		.controller('nbStopwatchController', nbStopwatchController)
@@ -27,11 +28,11 @@
 
 	function nbStopwatchConfig () {
 		var config = {
-			duration: 1000
+			'duration': 1000
 		};
 		return {
 			set: function (values) {
-				config = window.merge(true, config, values);
+				_.merge(config, values);
 			},
 			$get: function () {
 				return config;
@@ -41,12 +42,13 @@
 
 	nbStopwatchController.$inject = ['$scope', 'AnimationFrame', 'nbStopwatchConfig'];
 	function nbStopwatchController ($scope, AnimationFrame, nbStopwatchConfig) {
+		/*jshint validthis: true */
 		var deregister = [];
 		var self = this;
 		var isInitialized = false;
 		var isRunning = false;
 		var duration, startTime, stopTime;
-		var raf = new AnimationFrame;
+		var raf = new AnimationFrame();
 		var rafId;
 
 		self.start = function () {
